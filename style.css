@@ -37,18 +37,154 @@ section {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .project-card img {
-  width: 100%;
-  border-radius: 6px;
+  width: 100%; /* Ensures images take full width of the card */
+  height: auto; /* Ensures images are responsive */
+  border-radius: 8px; /* Rounded corners for images */
+  object-fit: cover; /* Ensures images cover the card area */
 }
 
 .project-card h3 {
-    margin-top: 10px;
+  margin-top: 10px;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tags li {
+  background-color: #e0e0e0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+footer {
+  background-color: #111;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #66ccff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.profile-photo {
+  width: 100px;
+  border-radius: 50%;
+  margin: 10px auto;
+  display: block;
+  border: 2px solid #fff; /* Optional: adds a white border around the photo */
+}
+
+/* Hamburger Menu in HTML, CSS, JS */
+.navbar {
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Aligns items to the edges */
+  align-items: center; /* Vertically centers items */
+  padding: 10px 20px; /* Adds padding around the navbar */
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default */
+  font-size: 24px; /* Larger font size for the hamburger icon */
+  background: none; /* No background */
+  border: none; /* No border */
+  color: white; /* White color for the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Navigation Links */
+.nav-links ul {
+  list-style: none; /* Removes bullet points */
+  padding: 0; /* Removes padding */
+  display: flex; /* Flexbox for layout */
+  gap: 20px; /* Space between links */
+}
+
+.nav-links a {
+  color: white; /* White color for links */
+  text-decoration: none; /* Removes underline */
+  font-weight: bold; /* Makes links bold */
+}
+
+/* Mobile Responsiveness with CSS */
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem; /* Smaller font size for footer on mobile */
+    padding: 15px; /* Smaller padding for footer on mobile */
+  }
+
+  header h1 {
+    font-size: 1.8rem; /* Smaller font size for header */
+  }
+
+  header p {
+    font-size: 1rem; /* Smaller font size for header paragraph */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the hamburger icon on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide navigation links by default on mobile */
+    flex-direction: column; /* Stack links vertically */
+    background-color: #222; /* Background color for the dropdown */
+    text-align: center; /* Center align text */
+    margin-top: 10px; /* Space above the dropdown */
+    padding: 10px 0; /* Padding for the dropdown */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show navigation links when active */
+  }
+
+  .nav-links ul {
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px; /* Space between links */
+  }
+
+  .profile-photo {
+    width: 80px; /* smaller profile photo on mobile */
+    margin-bottom: 10px; /* Ensures there's space between the profile photo and the text */
+  }
+
+  .project-list {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+
+  .project-card {
+    margin: 10px auto; /* center cards on mobile */
+    width: 90%; /* make cards take up most of the width */
+  }
+
+  section {
+    padding: 20px; /* smaller padding for section on mobile */
+  }
+
+  .tags li {
+    font-size: 0.75rem; /* smaller font size for tags on mobile */
+    padding: 3px 8px; /* smaller padding for tags on mobile */
+  }
 }
